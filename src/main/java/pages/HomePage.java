@@ -31,12 +31,12 @@ public class HomePage {
         driver.findElement(toSearchBox).sendKeys(destination);
     }
 
-    public void setDepartureDate () {
+    public void setDepartureDate (String day) {
         List<WebElement> columns = dateWidget.findElements(By.tagName("td"));
         for (WebElement cell : columns) {
             //Select 20th Date
-            if (cell.getText().equals("20")) {
-                cell.findElement(By.linkText("20")).click();
+            if (cell.getText().equals(day)) {
+                cell.findElement(By.linkText(day)).click();
                 break;
             }
         }
